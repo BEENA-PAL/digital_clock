@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>digital clock</title>
+    <style>
+      body {
+        background: #000;
+        background-image: url(image/spar.jpg);
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: auto;
+      }
+      .inside {
+        display: flex;
+        justify-content: center;
+        height: 4rem;
+        width: 25rem;
+        color: white;
+        background-image: linear-gradient(
+          to right,
+          rgba(214, 19, 19, 0.5),
+          rgba(106, 9, 9, 0.5)
+        );
+        padding: 1.5rem;
+      }
+      span {
+        font-size: 3.5rem;
+        margin: 0 3px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-style: normal;
+      }
+      .hr::after {
+        content: "hour";
+        font-size: 1.2rem;
+      }
+      .min::after {
+        content: "min";
+        font-size: 1.2rem;
+      }
+      .sec::after {
+        content: "sec";
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    `
+    <div class="container">
+      <div id="main">
+        <div class="inside">
+          <span class="hr" id="hr">00</span>
+          <span class="dot">:</span>
+          <span class="min" id="min">00</span>
+          <span class="dot">:</span>
+          <span class="sec" id="sec">00</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      let hrs = document.getElementById("hr");
+      let min = document.getElementById("min");
+      let sec = document.getElementById("sec");
+      let store = new Date();
+      hrs.innerHTML = store.getHours();
+      min.innerHTML = store.getMinutes();
+      sec.innerHTML = store.getSeconds();
+    </script>
+  </body>
+</html>
